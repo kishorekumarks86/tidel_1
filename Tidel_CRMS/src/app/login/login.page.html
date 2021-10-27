@@ -1,39 +1,41 @@
-<ion-header>
-<ion-toolbar>
-  <ion-buttons slot="start">
-      <ion-button color="primary">
-        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button  routerLink="/signup">Sign up</ion-button>
-    </ion-buttons>
-</ion-toolbar>
+<ion-header class="ion-no-border">
+<!-- <ion-toolbar>
+
+</ion-toolbar> -->
+<ion-buttons slot="start">
+  <ion-back-button defaulthref="login" text=""></ion-back-button>
+</ion-buttons>
 </ion-header>
 
 
 <ion-content>
-   <form> 
-     <div class="login-header ion-padding">
-    <img class="logo-img" src="assets/logo/wide-logo.png">
-  </div>
+  <ion-card>
     
+    <ion-img src="assets/icon/header1.png"></ion-img>
+   
+    </ion-card>
+    <ion-card-content>
+      <div class="wrapform">
+        <ion-item>
+          <ion-icon name="mail-outline"></ion-icon>
+          
+          <ion-input type="text" name="email" [{ngModle}]="email" placeholder="email" required></ion-input>
 
-    <ion-item lines="full">
-      <ion-label position="floating">UserName</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        
+          <ion-input type="password" name="password" [{ngModle}]="email" placeholder="********" required></ion-input>
 
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
+        </ion-item>
 
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block" [routerLink]="['/home']" class="small-text">Sign In</ion-button>
-        <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
-      </ion-col>
-    </ion-row>
-  </form>
+      </div>
+      <div class="forgetpassword">
+      <ion-button fill="clear">Forgotpassword</ion-button>
+    </div>
+     <div class="signbt">
+      <ion-button [routerLink]="['/home']" shape="round" fill="solid" class="sign-btn">Login </ion-button>
+    </div>
+    </ion-card-content>
+  
 </ion-content>
