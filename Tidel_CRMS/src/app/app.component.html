@@ -54,7 +54,7 @@
 
       </ion-menu-toggle>
       
-      	<ion-menu-toggle>
+      	
       	<ion-item lines="none" (click)="isRemainders === 1 ? isRemainders = 0 : isRemainders = 1">
       		 <ion-icon name="desktop-outline"></ion-icon>Masters
       		 <ion-icon slot="end" [name]="isRemainders? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
@@ -67,12 +67,23 @@
         <ion-item menuclose [hidden]="!isRemainders" [queryParams]="{ type: 'birthdays' }" menuClose class="sub-menu">
             <ion-icon name="contacts" slot="start"></ion-icon>Visitor Pass
             </ion-item>
-      </ion-menu-toggle>
+    
       	</ion-menu-toggle>
-      	<ion-menu-toggle>
-      	<ion-item>
-      		 <ion-icon name="stats-chart-outline"></ion-icon>Reports
+      	<ion-item lines="none" (click)="isRemainderss === 1 ? isRemainderss = 0 : isRemainderss = 1">
+      		<ion-icon name="stats-chart-outline"></ion-icon>Reports
+      		<ion-icon slot="end" [name]="isRemainderss? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+      		 <ion-icon name="arrow-dropdown"></ion-icon>
       	</ion-item>
+      		<ion-menu-toggle auto-hide="false">   
+          <ion-item menuclose [hidden]="!isRemainderss" [queryParams]="{ type: 'birthdayss' }" menuClose class="sub-menu">
+            <ion-icon name="podium" slot="start"></ion-icon>Work Permits
+        </ion-item>
+        <ion-item menuclose [hidden]="!isRemainderss" [queryParams]="{ type: 'birthdayss' }" menuClose class="sub-menu">
+            <ion-icon name="podium" slot="start"></ion-icon>TA Performances
+      	</ion-item>
+             <ion-item menuclose [hidden]="!isRemainderss" [queryParams]="{ type: 'birthdayss' }" menuClose class="sub-menu">
+            <ion-icon name="settings" slot="start"></ion-icon>JR Summary
+        </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
       	<ion-item routerLink="/login">

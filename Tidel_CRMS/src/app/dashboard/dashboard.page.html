@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header  [translucent]="true">
   <ion-toolbar>
   	
     <ion-title>dashboard</ion-title>
@@ -10,5 +10,14 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list-header color="light">Vertical Bar Chart</ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Number of Viewers per season for</ion-card-subtitle>
+      <ion-card-title>Demo Graph</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barChart></canvas>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
