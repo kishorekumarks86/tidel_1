@@ -15,25 +15,71 @@
       </div> -->
 
       <ion-list class="menu-items" lines="none">
-      	<ion-item>
-      		 <ion-icon name="pie-chart-outline" routerLink="/dashboard"></ion-icon>Dashbaord
+      	<ion-menu-toggle>
+      		<ion-item routerLink="/dashboard">
+      		 <ion-icon name="pie-chart-outline"></ion-icon>Dashbaord
       	</ion-item>
+      	</ion-menu-toggle>
+      	<ion-menu-toggle>
       	<ion-item>
       		 <ion-icon name="checkmark-done-outline"></ion-icon>Approval
       	</ion-item>
-      	<ion-item>
+      	</ion-menu-toggle>
+      	
+      	<ion-item lines="none" (click)="isRemainder === 1 ? isRemainder = 0 : isRemainder = 1">
       		 <ion-icon name="settings-outline"></ion-icon>Activity
+      		 <ion-icon slot="end" [name]="isRemainder? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+      		 <ion-icon name="arrow-dropdown"></ion-icon>
       	</ion-item>
-      	<ion-item>
+      	      <ion-menu-toggle auto-hide="false">
+      	      
+          <ion-item menuclose [hidden]="!isRemainder" [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            <ion-icon name="build" slot="start"></ion-icon>Job Request
+        </ion-item>
+        <ion-item menuclose [hidden]="!isRemainder" [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            <ion-icon name="contacts" slot="start"></ion-icon>Visitor Pass
+            </ion-item>
+             <ion-item menuclose [hidden]="!isRemainder" [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            <ion-icon name="settings" slot="start"></ion-icon>Service Request
+        </ion-item>
+          <ion-item menuclose [hidden]="!isRemainder" [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            <ion-icon name="person" slot="start"></ion-icon>Approve Permit
+        </ion-item>
+  		   <ion-item menuclose [hidden]="!isRemainder" [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            <ion-icon name="person" slot="start"></ion-icon>Work Permit
+        </ion-item>
+        <ion-item menuclose [hidden]="!isRemainder" [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            <ion-icon name="pricetag" slot="start"></ion-icon>Gate Pass
+        </ion-item>
+
+      </ion-menu-toggle>
+      
+      	<ion-menu-toggle>
+      	<ion-item lines="none" (click)="isRemainders === 1 ? isRemainders = 0 : isRemainders = 1">
       		 <ion-icon name="desktop-outline"></ion-icon>Masters
+      		 <ion-icon slot="end" [name]="isRemainders? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+      		 <ion-icon name="arrow-dropdown"></ion-icon>
       	</ion-item>
+      	<ion-menu-toggle auto-hide="false">   
+          <ion-item menuclose [hidden]="!isRemainders" [queryParams]="{ type: 'birthdays' }" menuClose class="sub-menu">
+            <ion-icon name="grid" slot="start"></ion-icon>Job Request
+        </ion-item>
+        <ion-item menuclose [hidden]="!isRemainders" [queryParams]="{ type: 'birthdays' }" menuClose class="sub-menu">
+            <ion-icon name="contacts" slot="start"></ion-icon>Visitor Pass
+            </ion-item>
+      </ion-menu-toggle>
+      	</ion-menu-toggle>
+      	<ion-menu-toggle>
       	<ion-item>
       		 <ion-icon name="stats-chart-outline"></ion-icon>Reports
       	</ion-item>
-      	<ion-item>
-      		 <ion-icon  name="log-out" routerLink="/login"></ion-icon>Signout
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+      	<ion-item routerLink="/login">
+      		 <ion-icon  name="log-out" ></ion-icon>Signout
       	</ion-item>
-      </ion-list>
+      	</ion-menu-toggle>
+      	</ion-list>
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main"></ion-router-outlet>
