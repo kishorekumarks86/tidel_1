@@ -1,5 +1,7 @@
 {
   "name": "Tidel_CRMS",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
